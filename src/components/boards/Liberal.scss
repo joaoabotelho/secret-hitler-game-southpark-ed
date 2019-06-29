@@ -1,0 +1,57 @@
+$ratio: 2;
+$width: 475px;
+$height: 152px;
+$real-height: $height * $ratio;
+
+$card-ratio: 0.7;
+$card-width: 159px;
+$card-height: 228px;
+$card-border-width: 3px;
+
+@function inner-border-ratio($size, $ratio) {
+   @return $size * $ratio
+}
+
+$inner-height: inner-border-ratio($card-height, $card-ratio);
+$vertical-margin: ($real-height - $inner-height)/2;
+
+@mixin inner-border {
+    border-width: 3px;
+    border-style: solid;
+    height: $inner-height;
+    margin: $vertical-margin auto;
+    display: flex; 
+
+    .tile-border {
+        width: 160px * $card-ratio;
+        height: 220px * $card-ratio;
+                
+        img {
+            width: 149px * $card-ratio;
+            height: 207px * $card-ratio;
+        }
+    }
+}
+
+.outside-border {
+    border-width: 3px;
+    border-style: solid;
+    width: 475px * $ratio;
+    height: $real-height;
+
+    h1 {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .inner-border {
+        @include inner-border;
+        width: inner-border-ratio($card-width, $card-ratio) * 5;
+
+        &-fascist {
+            @include inner-border;
+            width: inner-border-ratio($card-width, $card-ratio) * 6;
+        }
+   }
+}

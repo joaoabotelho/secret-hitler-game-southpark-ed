@@ -1,0 +1,72 @@
+.main {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 956px;
+  height: 620px;
+  margin: auto;
+}
+
+.draw-pile {
+  width: 11%;
+  margin: 15% 8%;
+}
+
+.discard-pile {
+  width: 11%;
+  margin: 0px 0px 0px 53%;
+}
+
+.n {
+  &-draw{
+    position: absolute;
+    margin: 18% 12%;
+  }
+
+  &-discard{
+    position: absolute;
+    margin: 18% 84.5%;;
+  }
+}
+
+.players {
+  width: 1400px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  
+  div[class^="player-"] {
+      height: 38px;
+      width: 175px;
+      text-align: center;
+      color: aliceblue
+  }
+
+  img {
+    width: 175px;
+  }
+
+  .player {
+    &-1 {
+      background-color: red;
+    }
+    &-2 {
+      background-color: blue
+    }
+    &-3{
+      background-color: green;
+    }
+    &-4{
+      background-color: purple;
+    }
+    &-5{
+      background-color: black;
+    }
+  }
+  .role {
+    width: 175px;
+    text-align: center;
+  }
+}
